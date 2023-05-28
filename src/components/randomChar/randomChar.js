@@ -5,14 +5,18 @@ import Spinner from '../spinner';
 import ErrorMessage from '../errorMessage';
 
 export default class RandomChar extends Component {
-  constructor(props) {
-    super(props);
-    this.updateChar();
-  }
-
   gotService = new GotService();
 
   state = { char: {}, loading: true, error: false };
+
+  componentDidMount() {
+    this.updateChar();
+    this.timerId = setInterval(this.updateChar, 5000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerId);
+  }
 
   onCharLoaded = (char) => {
     this.setState({ char, loading: false });
@@ -25,13 +29,14 @@ export default class RandomChar extends Component {
     });
   };
 
-  updateChar() {
+  updateChar = () => {
+    console.log('update');
     const id = Math.floor(Math.random() * 140 + 25);
     this.gotService
       .getCharacter(id)
       .then(this.onCharLoaded)
       .catch(this.onError);
-  }
+  };
 
   render() {
     const { char, loading, error } = this.state;
@@ -59,19 +64,19 @@ const View = ({ char }) => {
       <ul className="list-group list-group-flush">
         <li className="list-group-item d-flex justify-content-between">
           <span className="term">Gender </span>
-          <span>{gender}</span>
+          <span>{gender || 'no data'}</span>
         </li>
         <li className="list-group-item d-flex justify-content-between">
           <span className="term">Born </span>
-          <span>{born}</span>
+          <span>{born || 'no data'}</span>
         </li>
         <li className="list-group-item d-flex justify-content-between">
           <span className="term">Died </span>
-          <span>{died}</span>
+          <span>{died || 'no data'}</span>
         </li>
         <li className="list-group-item d-flex justify-content-between">
           <span className="term">Culture </span>
-          <span>{culture}</span>
+          <span>{culture || 'no data'}</span>
         </li>
       </ul>
     </>

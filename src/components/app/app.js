@@ -5,7 +5,9 @@ import RandomChar from '../randomChar/randomChar';
 import ItemList from '../itemList';
 import CharDetails from '../charDetails';
 
-class App extends Component {
+export default class App extends Component {
+  state = { isRandomChar: true };
+
   render() {
     return (
       <>
@@ -15,7 +17,21 @@ class App extends Component {
         <Container>
           <Row>
             <Col lg={{ size: 5, offset: 0 }}>
-              <RandomChar />
+              {this.state.isRandomChar ? <RandomChar /> : null}
+              <button
+                style={{
+                  margin: '10px 0',
+                  padding: '5px',
+                  color: 'white',
+                  backgroundColor: '#131929',
+                  borderRadius: '5px',
+                }}
+                onClick={() => {
+                  this.setState({ isRandomChar: !this.state.isRandomChar });
+                }}
+              >
+                Toggle random character
+              </button>
             </Col>
           </Row>
           <Row>
@@ -31,5 +47,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

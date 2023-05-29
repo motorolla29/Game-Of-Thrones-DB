@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import { Col, Row, Container } from 'reactstrap';
 import Header from '../header';
 import RandomChar from '../randomChar/randomChar';
-import ItemList from '../itemList';
-import CharDetails from '../charDetails';
+import ErrorMessage from '../errorMessage';
+import CharacterPage from '../characterPage/characterPage';
 
 export default class App extends Component {
-  state = { isRandomChar: true };
+  state = { isRandomChar: true, error: false };
+
+  componentDidCatch() {
+    console.log('error');
+    this.setState({ error: true });
+  }
 
   render() {
+    if (this.state.error) {
+      return <ErrorMessage />;
+    }
+
     return (
       <>
         <Container>
@@ -20,7 +29,7 @@ export default class App extends Component {
               {this.state.isRandomChar ? <RandomChar /> : null}
               <button
                 style={{
-                  margin: '10px 0',
+                  marginBottom: '5em',
                   padding: '5px',
                   color: 'white',
                   backgroundColor: '#131929',
@@ -34,14 +43,7 @@ export default class App extends Component {
               </button>
             </Col>
           </Row>
-          <Row>
-            <Col md="6">
-              <ItemList />
-            </Col>
-            <Col md="6">
-              <CharDetails />
-            </Col>
-          </Row>
+          <CharacterPage />
         </Container>
       </>
     );

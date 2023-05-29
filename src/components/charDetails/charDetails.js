@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import './charDetails.css';
 import GotService from '../../services/gotService';
 
+const Field = ({ char, field, label }) => {
+  return (
+    <li className="list-group-item d-flex justify-content-between">
+      <span className="term">{label}</span>
+      <span>{char[field] || 'no data'}</span>
+    </li>
+  );
+};
+
+export { Field };
 export default class CharDetails extends Component {
   state = {
     char: null,
@@ -35,28 +45,16 @@ export default class CharDetails extends Component {
       return <span className="select-error">Please select a character</span>;
     }
 
-    const { name, gender, born, died, culture } = this.state.char;
+    const { char } = this.state;
+    const { name } = char;
 
     return (
       <div className="char-details rounded">
         <h4>{name || 'no data'}</h4>
         <ul className="list-group list-group-flush">
-          <li className="list-group-item d-flex justify-content-between">
-            <span className="term">Gender</span>
-            <span>{gender || 'no data'}</span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between">
-            <span className="term">Born</span>
-            <span>{born || 'no data'}</span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between">
-            <span className="term">Died</span>
-            <span>{died || 'no data'}</span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between">
-            <span className="term">Culture</span>
-            <span>{culture || 'no data'}</span>
-          </li>
+          {React.Children.map(this.props.children, (child) => {
+            return React.cloneElement(child, { char });
+          })}
         </ul>
       </div>
     );

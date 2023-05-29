@@ -1,0 +1,8 @@
+.toggle-btn {
+  font-weight: 600;
+  margin-bottom: 5em;
+  padding: 10px;
+  color: rgb(122, 121, 121);
+  background-color: #131929;
+  border-radius: 5px;
+}

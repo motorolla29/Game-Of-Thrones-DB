@@ -1544,6 +1544,11 @@
     "schema-utils" "^3.0.0"
     "source-map" "^0.7.3"
 
+"@remix-run/router@1.6.2":
+  "integrity" "sha512-LzqpSrMK/3JBAVBI9u3NWtOhWNw5AMQfrUFYB0+bDHTSw17z++WJLsPsxAuK+oSddsxk4d7F/JcdDPM1M5YAhA=="
+  "resolved" "https://registry.npmjs.org/@remix-run/router/-/router-1.6.2.tgz"
+  "version" "1.6.2"
+
 "@rollup/plugin-babel@^5.2.0":
   "integrity" "sha512-WFfdLWU/xVWKeRQnKmIAQULUI7Il0gZnBIH/ZFO069wYIfPu+8zrfp/KMW0atmELoRDq8FbiP3VCss9MhCut7Q=="
   "resolved" "https://registry.npmjs.org/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz"
@@ -7911,7 +7916,7 @@
     "strip-ansi" "^6.0.1"
     "text-table" "^0.2.0"
 
-"react-dom@^16.0.0", "react-dom@^16.13.0", "react-dom@>= 16.3.0", "react-dom@>=15.0.0", "react-dom@0.14.x || ^15.0.0 || ^16.0.0":
+"react-dom@^16.0.0", "react-dom@^16.13.0", "react-dom@>= 16.3.0", "react-dom@>=15.0.0", "react-dom@>=16.8", "react-dom@0.14.x || ^15.0.0 || ^16.0.0":
   "integrity" "sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-16.14.0.tgz"
   "version" "16.14.0"
@@ -7958,6 +7963,21 @@
   "integrity" "sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A=="
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.11.0.tgz"
   "version" "0.11.0"
+
+"react-router-dom@^6.11.2":
+  "integrity" "sha512-JNbKtAeh1VSJQnH6RvBDNhxNwemRj7KxCzc5jb7zvDSKRnPWIFj9pO+eXqjM69gQJ0r46hSz1x4l9y0651DKWw=="
+  "resolved" "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.11.2.tgz"
+  "version" "6.11.2"
+  dependencies:
+    "@remix-run/router" "1.6.2"
+    "react-router" "6.11.2"
+
+"react-router@6.11.2":
+  "integrity" "sha512-74z9xUSaSX07t3LM+pS6Un0T55ibUE/79CzfZpy5wsPDZaea1F8QkrsiyRnA2YQ7LwE/umaydzXZV80iDCPkMg=="
+  "resolved" "https://registry.npmjs.org/react-router/-/react-router-6.11.2.tgz"
+  "version" "6.11.2"
+  dependencies:
+    "@remix-run/router" "1.6.2"
 
 "react-scripts@^5.0.1":
   "integrity" "sha512-8VAmEm/ZAwQzJ+GOMLbBsTdDKOpuZh7RPs0UymvBR2vRk4iZWCskjbFnxqjrzoIvlNNRZ3QJFx6/qDSi6zSnaQ=="
@@ -8024,7 +8044,7 @@
     "prop-types" "^15.6.2"
     "react-lifecycles-compat" "^3.0.4"
 
-"react@^16.0.0", "react@^16.13.0", "react@^16.14.0", "react@>= 16", "react@>= 16.3.0", "react@>=15.0.0", "react@0.14.x || ^15.0.0 || ^16.0.0":
+"react@^16.0.0", "react@^16.13.0", "react@^16.14.0", "react@>= 16", "react@>= 16.3.0", "react@>=15.0.0", "react@>=16.8", "react@0.14.x || ^15.0.0 || ^16.0.0":
   "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
   "version" "16.14.0"

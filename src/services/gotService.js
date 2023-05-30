@@ -62,11 +62,9 @@ class GotService {
     return {
       id: this._extractId(book),
       name: book.name,
-      region: book.region,
-      words: book.words,
-      titles: book.titles,
-      overlord: book.overlord,
-      ancestralWeapons: book.ancestralWeapons,
+      numberOfPages: book.numberOfPages,
+      publisher: book.publisher,
+      released: book.released,
     };
   };
 
@@ -74,9 +72,11 @@ class GotService {
     return {
       id: this._extractId(house),
       name: house.name,
-      numberOfPages: house.numberOfPages,
-      publiser: house.publiser,
-      released: house.released,
+      region: house.region,
+      words: house.words,
+      titles: house.titles.join(`\n`),
+      overlord: house.overlord,
+      ancestralWeapons: house.ancestralWeapons.join('\n'),
     };
   };
 }

@@ -5,7 +5,7 @@ import ItemDetails, { Field } from '../itemDetails';
 import ErrorMessage from '../errorMessage';
 import RowBlock from '../rowBlock';
 
-export default class HousePage extends Component {
+export default class HousesPage extends Component {
   gotService = new GotService();
   state = {
     selectedHouse: 1,
@@ -13,7 +13,6 @@ export default class HousePage extends Component {
   };
 
   componentDidCatch() {
-    console.log('error');
     this.setState({ error: true });
   }
 

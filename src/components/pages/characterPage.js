@@ -8,7 +8,7 @@ import RowBlock from '../rowBlock';
 export default class CharacterPage extends Component {
   gotService = new GotService();
   state = {
-    selectedChar: 130,
+    selectedChar: null,
     error: false,
   };
 
@@ -51,3 +51,7 @@ export default class CharacterPage extends Component {
     return <RowBlock left={itemList} rigth={charDetails} />;
   }
 }
+
+ItemList.defaultProps = {
+  onItemSelected: () => {},
+};
